@@ -8,6 +8,8 @@
 		<string>markdown</string>
 		<string>markdn</string>
 		<string>md</string>
+		<string>README</string>
+		<string>TODO</string>
 	</array>
 	<key>foldingStartMarker</key>
 	<string>(?x)
@@ -99,7 +101,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^[ ]{0,3}([0-9]+)(\.)(?=\s)</string>
+			<string>^[ ]{0,3}([0-9]+\.|[a-z]\.)(?=\s)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -940,6 +942,64 @@
 					<key>include</key>
 					<string>#tag-kbd</string>
 				</dict>
+				<dict>
+	                <key>comment</key>
+	                <string>Inline Math LaTeX</string>
+	                <key>match</key>
+	                <string>\$([^\s\$][^\$]*)\$</string>
+	                <key>name</key>
+	                <string>markup.raw.inline.math.pandoc</string>
+	        	</dict>
+		        <dict>
+		                <key>comment</key>
+		                <string>Math LaTeX</string>
+		                <key>match</key>
+		                <string>\$\$([^\$]+)\$\$</string>
+		                <key>name</key>
+		                <string>markup.raw.block.math.pandoc</string>
+		        </dict>
+		        <dict>
+		           <key>comment</key>
+		           <string>Pandoc citations</string>
+		           <key>match</key>
+		           <string>[\s\[](@[^;,\s]*)\b</string>
+		           <key>captures</key>
+		           <dict>
+		               <key>1</key>
+		               <dict>
+		                   <key>name</key>
+		                   <string>constant.other.reference.citation.markdownn</string>
+		               </dict>
+		           </dict>
+		           <key>name</key>
+		           <string>meta.reference.citation.markdown</string>
+		      	</dict>
+				<dict>
+		            <key>comment</key>
+		            <string>Match links which use references later defined</string>
+		            <key>match</key>
+		            <string>[^\[\]]{2}(\[)([^\]]*)(\])(?=[^\[\(:])</string>
+		            <key>captures</key>
+		            <dict>
+		                <key>1</key>
+		                <dict>
+		                    <key>name</key>
+		                    <string>punctuation.definition.string.begin.markdown</string>
+		                </dict>
+		                <key>3</key>
+		                <dict>
+		                    <key>name</key>
+		                    <string>punctuation.definition.string.end.markdown</string>
+		                </dict>
+		                <key>2</key>
+		                <dict>
+		                    <key>name</key>
+		                    <string>string.other.link.title.markdown</string>
+		                </dict>
+		            </dict>
+		            <key>name</key>
+		            <string>meta.link.inline.markdown</string>
+		        </dict>
 			</array>
 		</dict>
 		<key>italic</key>
@@ -1321,6 +1381,12 @@
 							<key>include</key>
 							<string>#inline</string>
 						</dict>
+                        <dict>
+                            <key>match</key>
+                            <string>\G\s*(?:[*\-+]|[0-9]+\.|[a-z]\.)\s+</string>
+                            <key>name</key>
+                            <string>punctuation.definition.list_item</string>
+                        </dict>
 						<dict>
 							<key>include</key>
 							<string>text.html.basic</string>
@@ -1560,7 +1626,7 @@
 		<key>fenced-shell</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(sh|shell)\s*$</string>
+		    <string>^(\s*[`~]{3,})(sh|shell|bash)\s*$</string>
 		    <key>end</key>
 		    <string>^(\1)\n</string>
 		    <key>name</key>
@@ -1640,7 +1706,7 @@
 		<key>fenced-js</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(js|json|javascript)\s*$</string>
+		    <string>^(\s*[`~]{3,})(js|javascript)\s*$</string>
 		    <key>end</key>
 		    <string>^(\1)\n</string>
 		    <key>name</key>
@@ -1650,6 +1716,22 @@
 		        <dict>
 		            <key>include</key>
 		            <string>source.js</string>
+		        </dict>
+		    </array>
+		</dict>
+		<key>fenced-json</key>
+		<dict>
+		    <key>begin</key>
+		    <string>^(\s*[`~]{3,})(json)\s*$</string>
+		    <key>end</key>
+		    <string>^(\1)\n</string>
+		    <key>name</key>
+		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+		    <key>patterns</key>
+		    <array>
+		        <dict>
+		            <key>include</key>
+		            <string>source.json</string>
 		        </dict>
 		    </array>
 		</dict>
@@ -1682,6 +1764,54 @@
 		        <dict>
 		            <key>include</key>
 		            <string>source.python</string>
+		        </dict>
+		    </array>
+		</dict>
+		<key>fenced-haskell</key>
+		<dict>
+		    <key>begin</key>
+		    <string>^(\s*[`~]{3,})(hs|haskell)\s*$</string>
+		    <key>end</key>
+		    <string>^(\1)\n</string>
+		    <key>name</key>
+		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+		    <key>patterns</key>
+		    <array>
+		        <dict>
+		            <key>include</key>
+		            <string>source.haskell</string>
+		        </dict>
+		    </array>
+		</dict>
+		<key>fenced-erlang</key>
+		<dict>
+		    <key>begin</key>
+		    <string>^(\s*[`~]{3,})(erlang)\s*$</string>
+		    <key>end</key>
+		    <string>^(\1)\n</string>
+		    <key>name</key>
+		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+		    <key>patterns</key>
+		    <array>
+		        <dict>
+		            <key>include</key>
+		            <string>source.erlang</string>
+		        </dict>
+		    </array>
+		</dict>
+		<key>fenced-latex</key>
+		<dict>
+		    <key>begin</key>
+		    <string>^(\s*[`~]{3,})(latex|tex)\s*$</string>
+		    <key>end</key>
+		    <string>^(\1)\n</string>
+		    <key>name</key>
+		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+		    <key>patterns</key>
+		    <array>
+		        <dict>
+		            <key>include</key>
+		            <string>text.tex.latex</string>
 		        </dict>
 		    </array>
 		</dict>
@@ -1772,11 +1902,27 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#fenced-json</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#fenced-ruby</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#fenced-python</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced-haskell</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced-erlang</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced-latex</string>
 				</dict>
 				<dict>
 					<key>include</key>
