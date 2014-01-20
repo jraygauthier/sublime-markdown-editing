@@ -1434,9 +1434,17 @@
 		<key>fenced-html</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(html|html5)\s*$</string>
+		    <string>^(\s*([`~]){3,})(html|html5)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1450,9 +1458,17 @@
 		<key>fenced-xml</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(xml)\s*$</string>
+		    <string>^(\s*([`~]){3,})(xml)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1466,9 +1482,17 @@
 		<key>fenced-diff</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(diff)\s*$</string>
+		    <string>^(\s*([`~]){3,})(diff)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1482,9 +1506,17 @@
 		<key>fenced-perl</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(perl)\s*$</string>
+		    <string>^(\s*([`~]){3,})(perl)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1498,9 +1530,17 @@
 		<key>fenced-php</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(php)\s*$</string>
+		    <string>^(\s*([`~]){3,})(php)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1514,9 +1554,17 @@
 		<key>fenced-css</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(css)\s*$</string>
+		    <string>^(\s*([`~]){3,})(css)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1530,9 +1578,17 @@
 		<key>fenced-less</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(less)\s*$</string>
+		    <string>^(\s*([`~]){3,})(less)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1546,9 +1602,17 @@
 		<key>fenced-java</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(java)\s*$</string>
+		    <string>^(\s*([`~]){3,})(java)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1562,9 +1626,17 @@
 		<key>fenced-c</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(c)\s*$</string>
+		    <string>^(\s*([`~]){3,})(c)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1578,9 +1650,17 @@
 		<key>fenced-c++</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(c\+\+|cpp)\s*$</string>
+		    <string>^(\s*([`~]){3,})(c\+\+|cpp)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1594,9 +1674,17 @@
 		<key>fenced-yaml</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(yaml)\s*$</string>
+		    <string>^(\s*([`~]){3,})(yaml)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1610,9 +1698,17 @@
 		<key>fenced-sql</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(sql)\s*$</string>
+		    <string>^(\s*([`~]){3,})(sql)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1626,9 +1722,17 @@
 		<key>fenced-shell</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(sh|shell|bash)\s*$</string>
+		    <string>^(\s*([`~]){3,})(sh|shell|bash)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1642,9 +1746,17 @@
 		<key>fenced-sass</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(sass|scss)\s*$</string>
+		    <string>^(\s*([`~]){3,})(sass|scss)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1658,9 +1770,17 @@
 		<key>fenced-scala</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(scala)\s*$</string>
+		    <string>^(\s*([`~]){3,})(scala)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1674,9 +1794,17 @@
 		<key>fenced-obj-c</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(objective-c)\s*$</string>
+		    <string>^(\s*([`~]){3,})(objective-c)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1690,9 +1818,17 @@
 		<key>fenced-coffee</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(coffee)\s*$</string>
+		    <string>^(\s*([`~]){3,})(coffee)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1706,9 +1842,17 @@
 		<key>fenced-js</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(js|javascript)\s*$</string>
+		    <string>^(\s*([`~]){3,})(js|javascript)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1722,9 +1866,17 @@
 		<key>fenced-json</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(json)\s*$</string>
+		    <string>^(\s*([`~]){3,})(json)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1738,9 +1890,17 @@
 		<key>fenced-ruby</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(ruby)\s*$</string>
+		    <string>^(\s*([`~]){3,})(ruby)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1754,9 +1914,17 @@
 		<key>fenced-python</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(py|python)\s*$</string>
+		    <string>^(\s*([`~]){3,})(py|python)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1770,9 +1938,17 @@
 		<key>fenced-haskell</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(hs|haskell)\s*$</string>
+		    <string>^(\s*([`~]){3,})(hs|haskell)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1786,9 +1962,17 @@
 		<key>fenced-erlang</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(erlang)\s*$</string>
+		    <string>^(\s*([`~]){3,})(erlang|erl)\s*$</string>
+		    <key>beginCaptures</key>
+			<dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.markdown.language</string>
+				</dict>
+			</dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1802,9 +1986,17 @@
 		<key>fenced-latex</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*[`~]{3,})(latex|tex)\s*$</string>
+		    <string>^(\s*([`~]){3,})(latex|tex)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\2*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		    <key>patterns</key>
@@ -1818,9 +2010,9 @@
 		<key>fenced-undefined</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*(`{3,}|~{3,}))(.*?)\s*$</string>
+		    <string>^(\s*((`){3,}|(~){3,}))(.*?)\s*$</string>
 		    <key>end</key>
-		    <string>^(\1)\n</string>
+		    <string>^(\1\3*\4*)\n</string>
 		    <key>name</key>
 		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
 		</dict>
