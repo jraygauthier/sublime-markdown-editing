@@ -1986,7 +1986,7 @@
 		<key>fenced-latex</key>
 		<dict>
 		    <key>begin</key>
-		    <string>^(\s*([`~]){3,})(latex|tex)\s*$</string>
+		    <string>^(\s*([`~]){3,})(latex)\s*$</string>
 		    <key>beginCaptures</key>
 		    <dict>
 		    	<key>3</key>
@@ -2004,6 +2004,30 @@
 		        <dict>
 		            <key>include</key>
 		            <string>text.tex.latex</string>
+		        </dict>
+		    </array>
+		</dict>
+		<key>fenced-tex</key>
+		<dict>
+		    <key>begin</key>
+		    <string>^(\s*([`~]){3,})(tex)\s*$</string>
+		    <key>beginCaptures</key>
+		    <dict>
+		    	<key>3</key>
+		    	<dict>
+		    		<key>name</key>
+		    		<string>variable.parameter.markdown.language</string>
+		    	</dict>
+		    </dict>
+		    <key>end</key>
+		    <string>^(\1\2*)\n</string>
+		    <key>name</key>
+		    <string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+		    <key>patterns</key>
+		    <array>
+		        <dict>
+		            <key>include</key>
+		            <string>text.tex</string>
 		        </dict>
 		    </array>
 		</dict>
@@ -2115,6 +2139,10 @@
 				<dict>
 					<key>include</key>
 					<string>#fenced-latex</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced-tex</string>
 				</dict>
 				<dict>
 					<key>include</key>
