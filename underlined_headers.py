@@ -129,8 +129,8 @@ class ConvertToAtxCommand(sublime_plugin.TextCommand):
 				atx = "# "
 				if '-' in m.group(2):
 					atx = "#" + atx
-				closing = atx[::-1] if closed else ""
-				self.view.replace(edit, mreg, '\n' + atx + m.group(1) + closing)
+				closing = (atx[::-1] if closed else "") + "\n"
+				self.view.replace(edit, mreg, atx + m.group(1) + closing)
 
 	def is_enabled(self):
 		return bool(self.view.score_selector(self.view.sel()[0].a, "text.html.markdown"))
