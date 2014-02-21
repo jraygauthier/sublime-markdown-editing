@@ -26,7 +26,7 @@ SETEXT_DASHES_RE = re.compile( r'''
 	''', re.X )
 
 SETEXT_HEADER_RE = re.compile( r'''
-	^\n(.*)\n
+	^(.*)\n
 	( =+ | -+ ) # A run of ---- or ==== underline characters.
 	[ \t]*        # Optional trailing whitespace.
 	$             # Must fill the while line. Don't match "- list items"
