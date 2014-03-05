@@ -1024,7 +1024,7 @@
 		            <key>comment</key>
 		            <string>Match links which use references later defined</string>
 		            <key>match</key>
-		            <string>[^\[\]]{2}(\[)([^\]]*)(\])(?=[^\[\(:])</string>
+		            <string>(\[)((?&lt;square&gt;[^\[\]\\]|\\.|\[\g&lt;square&gt;*+\])*+)(\])(?=[^\[\(:])</string>
 		            <key>captures</key>
 		            <dict>
 		                <key>1</key>
@@ -1032,7 +1032,7 @@
 		                    <key>name</key>
 		                    <string>punctuation.definition.string.begin.markdown</string>
 		                </dict>
-		                <key>3</key>
+		                <key>4</key>
 		                <dict>
 		                    <key>name</key>
 		                    <string>punctuation.definition.string.end.markdown</string>
@@ -1040,7 +1040,7 @@
 		                <key>2</key>
 		                <dict>
 		                    <key>name</key>
-		                    <string>string.other.link.title.markdown</string>
+		                    <string>string.other.link.jude.title.markdown</string>
 		                </dict>
 		            </dict>
 		            <key>name</key>
