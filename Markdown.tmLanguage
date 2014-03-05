@@ -1069,17 +1069,17 @@
 		                <key>1</key>
 		                <dict>
 		                    <key>name</key>
-		                    <string>punctuation.definition.string.begin.markdown</string>
+		                    <string>punctuation.definition.constant.begin.markdown</string>
 		                </dict>
 		                <key>4</key>
 		                <dict>
 		                    <key>name</key>
-		                    <string>punctuation.definition.string.end.markdown</string>
+		                    <string>punctuation.definition.constant.end.markdown</string>
 		                </dict>
 		                <key>2</key>
 		                <dict>
 		                    <key>name</key>
-		                    <string>string.other.link.jude.title.markdown</string>
+		                    <string>constant.other.reference.link.markdown</string>
 		                </dict>
 		            </dict>
 		            <key>name</key>
