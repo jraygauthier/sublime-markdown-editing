@@ -26,7 +26,7 @@ SETEXT_DASHES_RE = re.compile( r'''
 	''', re.X )
 
 SETEXT_HEADER_RE = re.compile( r'''
-	^(.*)\n
+	^(.+)\n
 	( =+ | -+ ) # A run of ---- or ==== underline characters.
 	[ \t]*        # Optional trailing whitespace.
 	$             # Must fill the while line. Don't match "- list items"
@@ -116,7 +116,7 @@ class FixAllUnderlinedHeadersCommand(sublime_plugin.TextCommand):
 class ConvertToAtxCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit, closed=False):
-		regions =  self.view.sel()
+		regions =  list(self.view.sel())
 		if len(regions) == 1 and regions[0].size() == 0:
 			regions = [sublime.Region(0, self.view.size())]
 		regions.reverse()
@@ -129,7 +129,7 @@ class ConvertToAtxCommand(sublime_plugin.TextCommand):
 				atx = "# "
 				if '-' in m.group(2):
 					atx = "#" + atx
-				closing = (atx[::-1] if closed else "") + "\n"
+				closing = atx[::-1] if closed else ""
 				self.view.replace(edit, mreg, atx + m.group(1) + closing)
 
 	def is_enabled(self):
