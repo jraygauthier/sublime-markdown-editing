@@ -302,6 +302,45 @@
 			<string>meta.link.reference.def.markdown</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.constant.markdown</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.other.reference.link.markdown</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.constant.markdown</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.markdown</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.link.markdown</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Pandoc footnotes</string>
+			<key>match</key>
+			<string>(?x:
+				\s*                        # Leading whitespace
+				(\[\^)(.+?)(\])(:)        # Reference name
+			)</string>
+			<key>name</key>
+			<string>meta.link.reference.def.markdown</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>^(?=\S)(?![=-]{3,}(?=$))</string>
 			<key>end</key>
