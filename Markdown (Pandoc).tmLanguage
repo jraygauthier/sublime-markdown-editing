@@ -24,7 +24,7 @@
 	<key>keyEquivalent</key>
 	<string>^~M</string>
 	<key>name</key>
-	<string>Markdown GFM</string>
+	<string>Markdown Pandoc</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -522,6 +522,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#italic</string>
 				</dict>
 				<dict>
@@ -652,7 +656,31 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#bold</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -894,6 +922,14 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#pandoc-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#bold</string>
 				</dict>
 				<dict>
@@ -1035,6 +1071,34 @@
 				<dict>
 					<key>include</key>
 					<string>#raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pandoc-raw</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1357,6 +1421,79 @@
 			<string>(`+)((?:[^`]|(?!(?&lt;!`)\1(?!`))`)*+)(\1)</string>
 			<key>name</key>
 			<string>markup.raw.inline.markdown</string>
+		</dict>
+		<key>pandoc-raw</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.raw.markdown</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>markup.raw.inline.content.markdown</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.raw.markdown</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\$)((?:[^$]|(?&lt;=\\)\$)*)(\1)</string>
+			<key>name</key>
+			<string>markup.raw.inline.markdown</string>
+		</dict>
+		<key>pandoc-inline</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>Pandoc citations</string>
+					<key>match</key>
+					<string>[\s\[](@[^;,\s]*)\b</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>constant.other.reference.citation.markdownn</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.reference.citation.markdown</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Match links which use references later defined</string>
+					<key>match</key>
+					<string>(\[)((?&lt;square&gt;[^\[\]\\]|\\.|\[\g&lt;square&gt;*+\])*+)(\])(?=[^\[\(:])</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.constant.begin.markdown</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.constant.end.markdown</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>constant.other.reference.link.markdown</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.link.inline.markdown</string>
+				</dict>
+			</array>
 		</dict>
 		<key>separator</key>
 		<dict>
