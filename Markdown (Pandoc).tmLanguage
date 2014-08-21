@@ -2207,6 +2207,54 @@
 				</dict>
 			</array>
 		</dict>
+		<key>fenced-plantuml</key>
+		<dict>
+			<key>begin</key>
+			<string>^(\s*([`~]){3,})(plantuml)\s*$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.markdown.language</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^(\1\2*)\n</string>
+			<key>name</key>
+			<string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.wsd</string>
+				</dict>
+			</array>
+		</dict>
+		<key>fenced-plantuml-attrs</key>
+		<dict>
+			<key>begin</key>
+			<string>^(\s*([`~]){3,})\s*\{[^.}]*\.(plantuml)[^\}]*\}$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.markdown.language</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^(\1\2*)\n</string>
+			<key>name</key>
+			<string>markup.raw.block.markdown markup.raw.block.fenced.markdown</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.wsd</string>
+				</dict>
+			</array>
+		</dict>
 		<key>fenced-tex</key>
 		<dict>
 			<key>begin</key>
@@ -2347,6 +2395,14 @@
 				<dict>
 					<key>include</key>
 					<string>#fenced-latex</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced-plantuml</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced-plantuml-attrs</string>
 				</dict>
 				<dict>
 					<key>include</key>
